@@ -1,0 +1,6 @@
+framework module Pods_UIComposable_Tests {
+  umbrella header "Pods-UIComposable_Tests-umbrella.h"
+
+  export *
+  module * { export * }
+}

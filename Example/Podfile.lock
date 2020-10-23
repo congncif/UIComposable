@@ -1,0 +1,16 @@
+PODS:
+  - UIComposable (0.1.0)
+
+DEPENDENCIES:
+  - UIComposable (from `../`)
+
+EXTERNAL SOURCES:
+  UIComposable:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  UIComposable: a1c442feca7f05ac13d7d10031b372eb728a8046
+
+PODFILE CHECKSUM: 5d0c76548404de47cc3904abefe2a1f26e66b709
+
+COCOAPODS: 1.9.3

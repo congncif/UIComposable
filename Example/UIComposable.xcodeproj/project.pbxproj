@@ -29,7 +29,7 @@
 
 /* Begin PBXFileReference section */
 		00F4A419D894773BB754F6AB /* Pods_UIComposable_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UIComposable_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		20CA1A537276602F3B4D2A9E /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		20CA1A537276602F3B4D2A9E /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		607FACD01AFB9204008FA782 /* UIComposable_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UIComposable_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACD51AFB9204008FA782 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -40,11 +40,11 @@
 		607FACE51AFB9204008FA782 /* UIComposable_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UIComposable_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
-		6658947A8FFFE12C27C755EB /* UIComposable.podspec */ = {isa = PBXFileReference; includeInIndex = 1; name = UIComposable.podspec; path = ../UIComposable.podspec; sourceTree = "<group>"; };
+		6658947A8FFFE12C27C755EB /* UIComposable.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = UIComposable.podspec; path = ../UIComposable.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		6D3CD357BDA4A206DCCC753B /* Pods-UIComposable_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UIComposable_Tests.release.xcconfig"; path = "Target Support Files/Pods-UIComposable_Tests/Pods-UIComposable_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		A0A81132F65A16827F61CD51 /* Pods-UIComposable_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UIComposable_Example.release.xcconfig"; path = "Target Support Files/Pods-UIComposable_Example/Pods-UIComposable_Example.release.xcconfig"; sourceTree = "<group>"; };
 		A1E4AE1B462933A544729869 /* Pods-UIComposable_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UIComposable_Example.debug.xcconfig"; path = "Target Support Files/Pods-UIComposable_Example/Pods-UIComposable_Example.debug.xcconfig"; sourceTree = "<group>"; };
-		AAB5DC5C2850A7E95CA0AF9C /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		AAB5DC5C2850A7E95CA0AF9C /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		C42F38FAF4FDD628EE37295A /* Pods_UIComposable_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UIComposable_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF3BD1D87A5EB575F2A544E1 /* Pods-UIComposable_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UIComposable_Tests.debug.xcconfig"; path = "Target Support Files/Pods-UIComposable_Tests/Pods-UIComposable_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -86,7 +86,6 @@
 				DF3BD1D87A5EB575F2A544E1 /* Pods-UIComposable_Tests.debug.xcconfig */,
 				6D3CD357BDA4A206DCCC753B /* Pods-UIComposable_Tests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -227,6 +226,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);

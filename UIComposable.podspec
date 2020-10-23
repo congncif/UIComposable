@@ -1,42 +1,21 @@
-#
-# Be sure to run `pod lib lint UIComposable.podspec' to ensure this is a
-# valid spec before submitting.
-#
-# Any lines starting with a # are optional, but their use is encouraged
-# To learn more about a Podspec see https://guides.cocoapods.org/syntax/podspec.html
-#
-
 Pod::Spec.new do |s|
   s.name             = 'UIComposable'
   s.version          = '0.1.0'
-  s.summary          = 'A short description of UIComposable.'
-
-# This description is used to generate tags and improve search results.
-#   * Think: What does it do? Why did you write it? What is the focus?
-#   * Try to keep it short, snappy and to the point.
-#   * Write the description between the DESC delimiters below.
-#   * Finally, don't worry about the indent, CocoaPods strips it!
+  s.swift_versions    = ['5.0', '5.1', '5.2', '5.3']
+  s.summary          = 'A protocol of UI rendering for plugins - UIComposable.'
 
   s.description      = <<-DESC
-TODO: Add long description of the pod here.
+  Use this protocol to render user interface like plugins
                        DESC
 
-  s.homepage         = 'https://github.com/NGUYEN CHI CONG/UIComposable'
+  s.homepage         = 'https://github.com/congncif/UIComposable'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'NGUYEN CHI CONG' => 'congnc.if@gmail.com' }
-  s.source           = { :git => 'https://github.com/NGUYEN CHI CONG/UIComposable.git', :tag => s.version.to_s }
-  # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
+  s.source           = { :git => 'https://github.com/congncif/UIComposable.git', :tag => s.version.to_s }
+   s.social_media_url = 'https://twitter.com/congncif'
 
   s.ios.deployment_target = '8.0'
 
   s.source_files = 'UIComposable/Classes/**/*'
-  
-  # s.resource_bundles = {
-  #   'UIComposable' => ['UIComposable/Assets/*.png']
-  # }
-
-  # s.public_header_files = 'Pod/Classes/**/*.h'
-  # s.frameworks = 'UIKit', 'MapKit'
-  # s.dependency 'AFNetworking', '~> 2.3'
 end

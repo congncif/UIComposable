@@ -1,0 +1,6 @@
+framework module UIComposable {
+  umbrella header "UIComposable-umbrella.h"
+
+  export *
+  module * { export * }
+}
