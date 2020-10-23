@@ -41,6 +41,10 @@ public typealias ComposableInterfaceObject = ComposableInterface & AnyObject
 public struct UIComposableAdapter: ComposableInterface {
     weak var object: ComposableInterfaceObject?
 
+    public init(object: ComposableInterfaceObject?) {
+        self.object = object
+    }
+
     public var composedElements: [UIElement] {
         object?.composedElements ?? []
     }
