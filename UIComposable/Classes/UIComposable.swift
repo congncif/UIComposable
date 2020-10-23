@@ -13,7 +13,7 @@ public struct UIElement: Equatable {
     public var contentViewController: UIViewController?
     public var configuration: Any? // use for UI configuration
 
-    private var version: Double
+    public private(set) var version: Double
 
     public init(identifier: String, contentViewController: UIViewController?, configuration: Any? = nil) {
         self.identifier = identifier
