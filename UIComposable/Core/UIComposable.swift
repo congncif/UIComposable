@@ -29,7 +29,7 @@ public struct UIElement: Equatable {
 
 public protocol ComposableInterface {
     var composedElements: [UIElement] { get }
-    var elementSorter: ((UIElement, UIElement) -> Bool)? { get }
+    var elementSortRule: ((UIElement, UIElement) -> Bool)? { get }
 
     func composeInterface(elements: [UIElement])
 }
@@ -49,8 +49,8 @@ public struct UIComposableAdapter: ComposableInterface {
         object?.composedElements ?? []
     }
 
-    public var elementSorter: ((UIElement, UIElement) -> Bool)? {
-        object?.elementSorter
+    public var elementSortRule: ((UIElement, UIElement) -> Bool)? {
+        object?.elementSortRule
     }
 
     public func composeInterface(elements: [UIElement]) {

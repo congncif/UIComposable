@@ -32,6 +32,12 @@ open class RxComposableListViewController: UIViewController, ComposableInterface
         displayItems.accept(elements.filter { $0.contentViewController != nil })
     }
 
+    public private(set) var elementSortRule: ((UIElement, UIElement) -> Bool)?
+
+    public func setElementSortRule(_ sortRule: ((UIElement, UIElement) -> Bool)?) {
+        elementSortRule = sortRule
+    }
+
     private typealias Section = AnimatableSectionModel<Int, UIElement>
     private typealias DataSource = RxTableViewSectionedAnimatedDataSource<Section>
 
