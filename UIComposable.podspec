@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'UIComposable'
-  s.version          = '0.1.2'
+  s.version          = '0.2.0'
   s.swift_versions    = ['5.0', '5.1', '5.2', '5.3']
   s.summary          = 'A protocol of UI rendering for plugins - UIComposable.'
 
@@ -16,6 +16,22 @@ Pod::Spec.new do |s|
    s.social_media_url = 'https://twitter.com/congncif'
 
   s.ios.deployment_target = '9.0'
-
-  s.source_files = 'UIComposable/Classes/**/*'
+  
+  s.default_subspec = 'Default'
+  
+  s.subspec 'Default' do |co|
+      co.dependency 'UIComposable/Core'
+  end
+  
+  s.subspec 'Core' do |co|
+      co.source_files = 'UIComposable/Core/**/*'
+  end
+  
+  s.subspec 'RxUI' do |co|
+      co.source_files = 'UIComposable/RxUI/**/*'
+      
+      co.dependency 'UIComposable/Core'
+      co.dependency 'RxDataSources'
+      co.dependency 'SnapKit'
+  end
 end
