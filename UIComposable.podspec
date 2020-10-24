@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'UIComposable'
-  s.version          = '0.3.0'
+  s.version          = '0.3.1'
   s.swift_versions    = ['5.0', '5.1', '5.2', '5.3']
   s.summary          = 'A protocol of UI rendering for plugins - UIComposable.'
 
@@ -15,7 +15,7 @@ Pod::Spec.new do |s|
   s.source           = { :git => 'https://github.com/congncif/UIComposable.git', :tag => s.version.to_s }
    s.social_media_url = 'https://twitter.com/congncif'
 
-  s.ios.deployment_target = '9.0'
+  s.ios.deployment_target = '10.0'
   
   s.default_subspec = 'Default'
   
