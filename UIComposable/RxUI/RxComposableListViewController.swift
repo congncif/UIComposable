@@ -9,7 +9,6 @@ import Foundation
 import RxCocoa
 import RxDataSources
 import RxSwift
-import SnapKit
 import UIKit
 
 extension UIElement: IdentifiableType {
@@ -74,7 +73,18 @@ open class RxComposableListViewController: UIViewController, ComposableInterface
     override open func viewDidLoad() {
         super.viewDidLoad()
         configureView()
-        configurePresenter()
+        configureBinding()
+    }
+
+    open func layoutTableView() {
+        tableView.translatesAutoresizingMaskIntoConstraints = false
+
+        NSLayoutConstraint.activate([
+            tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            tableView.topAnchor.constraint(equalTo: view.topAnchor),
+            tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+        ])
     }
 }
 
@@ -84,10 +94,10 @@ extension RxComposableListViewController {
         tableView.separatorStyle = .none
         tableView.estimatedRowHeight = 44
         tableView.rowHeight = UITableView.automaticDimension
+
         view.addSubview(tableView)
-        tableView.snp.makeConstraints { make in
-            make.edges.equalToSuperview()
-        }
+
+        layoutTableView()
     }
 
     private func buildDataSource() -> DataSource {
@@ -112,9 +122,13 @@ extension RxComposableListViewController {
 
                 if let subView = model.contentViewController?.view {
                     cell.contentView.addSubview(subView)
-                    subView.snp.makeConstraints { maker in
-                        maker.edges.equalToSuperview()
-                    }
+
+                    NSLayoutConstraint.activate([
+                        subView.leadingAnchor.constraint(equalTo: cell.contentView.leadingAnchor),
+                        subView.trailingAnchor.constraint(equalTo: cell.contentView.trailingAnchor),
+                        subView.topAnchor.constraint(equalTo: cell.contentView.topAnchor),
+                        subView.bottomAnchor.constraint(equalTo: cell.contentView.bottomAnchor)
+                    ])
                 }
 
                 return cell
@@ -122,7 +136,7 @@ extension RxComposableListViewController {
         )
     }
 
-    private func configurePresenter() {
+    private func configureBinding() {
         displayItems
             .map { [Section(model: 0, items: $0)] }
             .bind(to: tableView.rx.items(dataSource: dataSource))
