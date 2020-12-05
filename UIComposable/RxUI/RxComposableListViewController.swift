@@ -122,6 +122,8 @@ extension RxComposableListViewController {
 
                 if let subView = model.contentViewController?.view {
                     cell.contentView.addSubview(subView)
+                    
+                    subView.translatesAutoresizingMaskIntoConstraints = false
 
                     NSLayoutConstraint.activate([
                         subView.leadingAnchor.constraint(equalTo: cell.contentView.leadingAnchor),
