@@ -1,11 +1,12 @@
 {
   "name": "UIComposable",
-  "version": "0.4.0",
+  "version": "0.5.0",
   "swift_versions": [
     "5.0",
     "5.1",
     "5.2",
-    "5.3"
+    "5.3",
+    "5.4"
   ],
   "summary": "A protocol of UI rendering for plugins - UIComposable.",
   "description": "Use this protocol to render user interface like plugins",
@@ -19,7 +20,7 @@
   },
   "source": {
     "git": "https://github.com/congncif/UIComposable.git",
-    "tag": "0.4.0"
+    "tag": "0.5.0"
   },
   "social_media_url": "https://twitter.com/congncif",
   "platforms": {
@@ -38,6 +39,15 @@
     {
       "name": "Core",
       "source_files": "UIComposable/Core/**/*"
+    },
+    {
+      "name": "UIKit",
+      "source_files": "UIComposable/UIKit/**/*",
+      "dependencies": {
+        "UIComposable/Core": [
+
+        ]
+      }
     },
     {
       "name": "RxUI",
@@ -64,5 +74,5 @@
       }
     }
   ],
-  "swift_version": "5.3"
+  "swift_version": "5.4"
 }

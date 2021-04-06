@@ -4,6 +4,7 @@ target 'UIComposable_Example' do
   pod 'UIComposable', :path => '../'
   pod 'UIComposable/RxUI', :path => '../'
   pod 'UIComposable/DiffUI', :path => '../'
+  pod 'UIComposable/UIKit', :path => '../'
 
   target 'UIComposable_Tests' do
     inherit! :search_paths

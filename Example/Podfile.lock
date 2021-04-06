@@ -16,22 +16,25 @@ PODS:
   - RxRelay (5.1.1):
     - RxSwift (~> 5)
   - RxSwift (5.1.1)
-  - UIComposable (0.4.0):
-    - UIComposable/Default (= 0.4.0)
-  - UIComposable/Core (0.4.0)
-  - UIComposable/Default (0.4.0):
+  - UIComposable (0.5.0):
+    - UIComposable/Default (= 0.5.0)
+  - UIComposable/Core (0.5.0)
+  - UIComposable/Default (0.5.0):
     - UIComposable/Core
-  - UIComposable/DiffUI (0.4.0):
+  - UIComposable/DiffUI (0.5.0):
     - DiffableDataSources
     - UIComposable/Core
-  - UIComposable/RxUI (0.4.0):
+  - UIComposable/RxUI (0.5.0):
     - RxDataSources
+    - UIComposable/Core
+  - UIComposable/UIKit (0.5.0):
     - UIComposable/Core
 
 DEPENDENCIES:
   - UIComposable (from `../`)
   - UIComposable/DiffUI (from `../`)
   - UIComposable/RxUI (from `../`)
+  - UIComposable/UIKit (from `../`)
 
 SPEC REPOS:
   trunk:
@@ -55,8 +58,8 @@ SPEC CHECKSUMS:
   RxDataSources: efee07fa4de48477eca0a4611e6d11e2da9c1114
   RxRelay: d77f7d771495f43c556cbc43eebd1bb54d01e8e9
   RxSwift: 81470a2074fa8780320ea5fe4102807cb7118178
-  UIComposable: 1733054a42af64a89661a3ef6cdf501adb99860c
+  UIComposable: d7751c2a178450c866076e62faae2f41d04faec5
 
-PODFILE CHECKSUM: 49987d3741488b4f7a8e79dee0d8a5f320186b09
+PODFILE CHECKSUM: ff2b9b7880481d8e1000fbbdcd8e1f0c7caf5641
 
-COCOAPODS: 1.10.0
+COCOAPODS: 1.10.1

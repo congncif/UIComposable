@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
   s.name             = 'UIComposable'
-  s.version          = '0.4.1'
-  s.swift_versions    = ['5.0', '5.1', '5.2', '5.3']
+  s.version          = '0.5.0'
+  s.swift_versions    = ['5.0', '5.1', '5.2', '5.3', '5.4']
   s.summary          = 'A protocol of UI rendering for plugins - UIComposable.'
 
   s.description      = <<-DESC
@@ -25,6 +25,12 @@ Pod::Spec.new do |s|
   
   s.subspec 'Core' do |co|
       co.source_files = 'UIComposable/Core/**/*'
+  end
+  
+  s.subspec 'UIKit' do |co|
+      co.source_files = 'UIComposable/UIKit/**/*'
+      
+      co.dependency 'UIComposable/Core'
   end
   
   s.subspec 'RxUI' do |co|
