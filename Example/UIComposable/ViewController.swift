@@ -30,12 +30,22 @@ class ViewController: UIViewController {
         let element1 = UIElement(identifier: "1", contentViewController: {
             let newVC = UIViewController()
             newVC.view.backgroundColor = UIColor.red
+            
+            NSLayoutConstraint.activate([
+                newVC.view.heightAnchor.constraint(equalToConstant: 100)
+            ])
+            
             return newVC
         }())
 
         let element2 = UIElement(identifier: "2", contentViewController: {
             let newVC = UIViewController()
             newVC.view.backgroundColor = UIColor.blue
+            
+            NSLayoutConstraint.activate([
+                newVC.view.heightAnchor.constraint(equalToConstant: 200)
+            ])
+            
             return newVC
         }())
 
