@@ -48,7 +48,7 @@ open class ComposableListViewController: UIViewController, ComposableInterface {
 
     private lazy var dataSource = DataSource { [unowned self] _ -> Int in
         self.validElements.count
-    } cellForRowAtIndexPath: { (tableView, indexPath) -> UITableViewCell in
+    } cellForRowAtIndexPath: { [unowned self] (tableView, indexPath) -> UITableViewCell in
         let cellId = "ListViewCell"
         let cell: UITableViewCell
         if let dequeuedCell = tableView.dequeueReusableCell(withIdentifier: cellId) {
