@@ -34,6 +34,10 @@ public protocol ComposableInterface {
     func composeInterface(elements: [UIElement])
 }
 
+extension ComposableInterface {
+    public var elementSortRule: ((UIElement, UIElement) -> Bool)? { nil }
+}
+
 public typealias ComposableInterfaceObject = ComposableInterface & AnyObject
 
 // MARK: - Adapter
