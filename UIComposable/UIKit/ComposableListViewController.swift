@@ -5,6 +5,7 @@
 //  Created by NGUYEN CHI CONG on 4/6/21.
 //
 
+import Foundation
 import UIKit
 
 open class ComposableListViewController: UIViewController, ComposableInterface {
@@ -48,7 +49,7 @@ open class ComposableListViewController: UIViewController, ComposableInterface {
 
     private lazy var dataSource = DataSource { [unowned self] _ -> Int in
         self.validElements.count
-    } cellForRowAtIndexPath: { [unowned self] (tableView, indexPath) -> UITableViewCell in
+    } cellForRowAtIndexPath: { [unowned self] tableView, indexPath -> UITableViewCell in
         let cellId = "ListViewCell"
         let cell: UITableViewCell
         if let dequeuedCell = tableView.dequeueReusableCell(withIdentifier: cellId) {
@@ -122,8 +123,7 @@ final class DataSource: NSObject, UITableViewDataSource {
     private let numberOfRows: (UITableView) -> Int
     private let cellForRowAtIndexPath: (UITableView, IndexPath) -> UITableViewCell
 
-    init(numberOfRows: @escaping (UITableView) -> Int,
-         cellForRowAtIndexPath: @escaping (UITableView, IndexPath) -> UITableViewCell) {
+    init(numberOfRows: @escaping (UITableView) -> Int, cellForRowAtIndexPath: @escaping (UITableView, IndexPath) -> UITableViewCell) {
         self.numberOfRows = numberOfRows
         self.cellForRowAtIndexPath = cellForRowAtIndexPath
     }

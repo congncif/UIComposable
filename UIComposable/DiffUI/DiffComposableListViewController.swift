@@ -116,7 +116,7 @@ extension DiffComposableListViewController {
 
             if let subView = model.contentViewController?.view {
                 cell.contentView.addSubview(subView)
-                
+
                 subView.translatesAutoresizingMaskIntoConstraints = false
 
                 NSLayoutConstraint.activate([

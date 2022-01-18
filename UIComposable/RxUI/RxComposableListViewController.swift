@@ -107,7 +107,7 @@ extension RxComposableListViewController {
         return DataSource(
             animationConfiguration: animationConfiguration,
             decideViewTransition: transition,
-            configureCell: { (_, tableView, _, model) -> UITableViewCell in
+            configureCell: { _, tableView, _, model -> UITableViewCell in
                 let cellId = "ListViewCell"
                 let cell: UITableViewCell
                 if let dequeuedCell = tableView.dequeueReusableCell(withIdentifier: cellId) {
@@ -122,7 +122,7 @@ extension RxComposableListViewController {
 
                 if let subView = model.contentViewController?.view {
                     cell.contentView.addSubview(subView)
-                    
+
                     subView.translatesAutoresizingMaskIntoConstraints = false
 
                     NSLayoutConstraint.activate([

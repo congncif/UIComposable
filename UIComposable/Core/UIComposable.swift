@@ -34,8 +34,8 @@ public protocol ComposableInterface {
     func composeInterface(elements: [UIElement])
 }
 
-extension ComposableInterface {
-    public var elementSortRule: ((UIElement, UIElement) -> Bool)? { nil }
+public extension ComposableInterface {
+    var elementSortRule: ((UIElement, UIElement) -> Bool)? { nil }
 }
 
 public typealias ComposableInterfaceObject = ComposableInterface & AnyObject
@@ -84,10 +84,8 @@ public enum UIElementAction {
     }
 }
 
-extension ComposableInterface {
-    public var elementSorter: ((UIElement, UIElement) -> Bool)? { nil }
-
-    public func putUIElementAction(_ action: UIElementAction) {
+public extension ComposableInterface {
+    func putUIElementAction(_ action: UIElementAction) {
         var newElements = composedElements
 
         var currentElement: UIElement?
@@ -119,8 +117,8 @@ extension ComposableInterface {
                 newElements.append(element)
             }
 
-            if let sorter = elementSorter {
-                newElements.sort(by: sorter)
+            if let rule = elementSortRule {
+                newElements.sort(by: rule)
             }
 
             composeInterface(elements: newElements)
@@ -132,21 +130,21 @@ extension ComposableInterface {
 
 // MARK: - Mutate element
 
-extension UIElement {
-    public var reloaded: UIElement {
+public extension UIElement {
+    var reloaded: UIElement {
         var newElement = self
         newElement.version = Date().timeIntervalSince1970
         return newElement
     }
 
-    public var contentRemoved: UIElement {
+    var contentRemoved: UIElement {
         var newElement = self
         newElement.version = Date().timeIntervalSince1970
         newElement.contentViewController = nil
         return newElement
     }
 
-    public func configurationUpdated(_ configuration: Any?) -> UIElement {
+    func configurationUpdated(_ configuration: Any?) -> UIElement {
         var newElement = self
         newElement.version = Date().timeIntervalSince1970
         newElement.configuration = configuration
