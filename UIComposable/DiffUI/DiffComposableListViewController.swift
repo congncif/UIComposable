@@ -9,12 +9,6 @@ import DiffableDataSources
 import Foundation
 import UIKit
 
-extension UIElement: Hashable {
-    public func hash(into hasher: inout Hasher) {
-        hasher.combine(identifier)
-    }
-}
-
 enum Section {
     case main
 }

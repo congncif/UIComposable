@@ -25,9 +25,11 @@ public struct UIElement: Equatable {
     public static func == (lhs: UIElement, rhs: UIElement) -> Bool {
         lhs.identifier == rhs.identifier && lhs.version == rhs.version
     }
-    
-    public var hashValue: Int {
-        identifier.hashValue
+}
+
+extension UIElement: Hashable {
+    public func hash(into hasher: inout Hasher) {
+        hasher.combine(identifier)
     }
 }
 
