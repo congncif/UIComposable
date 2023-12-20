@@ -25,6 +25,10 @@ public struct UIElement: Equatable {
     public static func == (lhs: UIElement, rhs: UIElement) -> Bool {
         lhs.identifier == rhs.identifier && lhs.version == rhs.version
     }
+    
+    public var hashValue: Int {
+        identifier.hashValue
+    }
 }
 
 public protocol ComposableInterface {
