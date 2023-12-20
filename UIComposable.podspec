@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'UIComposable'
-  s.version          = '1.0.0'
+  s.version          = '1.0.1'
   s.swift_version    = "5"
   s.summary          = 'A protocol of UI rendering for plugins - UIComposable.'
 

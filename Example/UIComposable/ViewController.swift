@@ -13,7 +13,7 @@ class ViewController: DiffComposableListViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.tableView.contentInsetAdjustmentBehavior = .never
+        self.tableView.contentInsetAdjustmentBehavior = .automatic
 
         let element1 = UIElement(identifier: "1", contentViewController: {
             let newVC = UIViewController()
@@ -37,15 +37,23 @@ class ViewController: DiffComposableListViewController {
             return newVC
         }())
 
+        putUIElementAction(.update(element: element1))
+        putUIElementAction(.update(element: element2))
+        
         self.composeInterface(elements: [element1, element2])
 
         DispatchQueue.main.asyncAfter(deadline: .now() + 2) { [unowned self] in
-            let element3 = UIElement(identifier: "3", contentViewController: {
+            let element2x = UIElement(identifier: "2", contentViewController: {
                 let newVC = UIViewController()
                 newVC.view.backgroundColor = UIColor.green
+                
+                NSLayoutConstraint.activate([
+                    newVC.view.heightAnchor.constraint(equalToConstant: 400)
+                ])
+                
                 return newVC
             }())
-            self.composeInterface(elements: [element1, element3, element2])
+            self.putUIElementAction(.update(element: element2x))
         }
     }
 }

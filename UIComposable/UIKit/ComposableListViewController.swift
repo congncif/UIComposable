@@ -12,7 +12,11 @@ open class ComposableListViewController: UIViewController, ComposableInterface {
     public var composedElements: [UIElement] { elements }
 
     public func composeInterface(elements: [UIElement]) {
-        self.elements = elements
+        let uniqueElements = elements.unique()
+
+        assert(uniqueElements.count == elements.count, "⚠️ [UIComposable] Multiple items share the same identifier, this is not allowed ‼️")
+
+        self.elements = uniqueElements
 
         let pages = elements.compactMap { $0.contentViewController }
         viewControllers = pages
